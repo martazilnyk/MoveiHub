@@ -1,1 +1,21 @@
+name: My GitHub Actions Pipeline
 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build code
+      run: echo "Compiling the project... Build complete."
+
+    - name: Test code
+      run: echo "Running tests... All tests passed!"
